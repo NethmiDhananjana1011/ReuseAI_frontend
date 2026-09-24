@@ -1,10 +1,15 @@
 import AddItem from './components/AddItem';
+import ViewItems from './components/ViewItems';
 
 function App() {
-  return (
-    <div className="min-h-screen bg-gray-50 py-10">
-      <h1 className="text-center text-4xl font-extrabold text-green-700 mb-8">ReuseAI ♻️</h1>
+ return (
+    <div>
+      <h1 style={{ textAlign: 'center' }}>ReuseAI ♻️</h1>
+      {/* Item එක Add කරන කොටස */}
       <AddItem />
+      
+      {/* Save කරපු Items පෙන්නන කොටස */}
+      <ViewItems />
     </div>
   );
 }
