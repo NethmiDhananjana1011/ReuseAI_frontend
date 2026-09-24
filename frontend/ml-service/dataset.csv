@@ -1,0 +1,9 @@
+name,material,condition,reuse_option
+Old wooden door,Wood,Good,Furniture Making
+Old wooden door,Wood,Fair,Room Partition
+Plastic bottle,Plastic,Good,Plant Pot
+Plastic bottle,Plastic,Fair,Storage Container
+Glass bottle,Glass,Good,Decoration
+Old chair,Wood,Poor,Firewood
+Old laptop,Electronics,Poor,Parts Recovery
+Old laptop,Electronics,Good,Home Server
