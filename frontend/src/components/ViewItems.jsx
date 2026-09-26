@@ -5,7 +5,6 @@ export default function ViewItems() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // Component එක load වෙද්දිම Items ටික backend එකෙන් ගන්නවා
     const fetchItems = async () => {
       try {
         const res = await axios.get('http://localhost:5000/api/items');
@@ -15,22 +14,52 @@ export default function ViewItems() {
       }
     };
     fetchItems();
-  }, []); // හිස් array එකක් දැම්මම එක පාරක් විතරක් run වෙනවා
+  }, []);
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this item?")) return;
+    try {
+      await axios.delete(`http://localhost:5000/api/items/${id}`);
+      setItems(items.filter(item => item._id !== id));
+    } catch (err) {
+      console.error("Error deleting item:", err);
+      alert("Failed to delete item");
+    }
+  };
 
   return (
-    <div style={{ marginTop: '40px', padding: '20px', borderTop: '2px solid #ccc' }}>
-      <h2>📦 My Saved Items</h2>
+    <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 h-full">
+      <h2 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-2">
+        <span>📦 My Saved Items</span>
+      </h2>
       
       {items.length === 0 ? (
-        <p>No items found. Add some items above!</p>
+        <div className="text-center text-gray-500 py-10 bg-gray-50 rounded-xl border border-dashed border-gray-300">
+          <p className="text-lg">No items found.</p>
+          <p className="text-sm">Add some items from the left panel!</p>
+        </div>
       ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '20px' }}>
+        <div className="flex flex-col gap-4 overflow-y-auto pr-2" style={{ maxHeight: '600px' }}>
           {items.map((item) => (
-            <div key={item._id} style={{ border: '1px solid gray', padding: '15px', borderRadius: '8px' }}>
-              <h3 style={{ margin: '0 0 10px 0' }}>{item.name}</h3>
-              <p style={{ margin: '5px 0' }}><strong>Material:</strong> {item.material}</p>
-              <p style={{ margin: '5px 0' }}><strong>Condition:</strong> {item.condition}</p>
-              {item.description && <p style={{ margin: '5px 0' }}><strong>Description:</strong> {item.description}</p>}
+            <div key={item._id} className="bg-gray-50 border border-gray-200 p-5 rounded-xl hover:shadow-md transition group relative flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+              
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-gray-800 mb-1 capitalize">{item.name}</h3>
+                <div className="flex flex-wrap gap-2 text-sm text-gray-600 mb-2">
+                  <span className="bg-white px-2 py-1 rounded border shadow-sm"><strong>Material:</strong> {item.material}</span>
+                  <span className="bg-white px-2 py-1 rounded border shadow-sm"><strong>Condition:</strong> {item.condition}</span>
+                </div>
+                {item.description && (
+                  <p className="text-sm text-gray-500 mt-2 italic bg-white p-2 rounded border">"{item.description}"</p>
+                )}
+              </div>
+
+              <button 
+                onClick={() => handleDelete(item._id)}
+                className="bg-red-50 text-red-600 border border-red-200 hover:bg-red-600 hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
+              >
+                Delete <span className="text-lg">🗑️</span>
+              </button>
             </div>
           ))}
         </div>
