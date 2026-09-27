@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
-        
+
         {/* Navigation Bar */}
         <nav className="bg-green-600 text-white shadow-lg py-4 px-6">
           <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -29,7 +29,11 @@ function App() {
                 <>
                   <span className="font-medium mr-4 hidden sm:block">Hi, {user.name} 👋</span>
                   <Link to="/" className="text-lg font-semibold hover:text-green-200 transition">Add Item</Link>
-                  <Link to="/saved-items" className="text-lg font-semibold hover:text-green-200 transition">Saved Items</Link>
+                  // Navbar එක ඇතුළේ ලින්ක් එක මේ විදිහට වෙනස් කරන්න:
+                  <Link to="/my-projects" className="text-lg font-semibold hover:text-green-200 transition">My Projects</Link>
+
+// පල්ලෙහා Routes වල තියෙන පාර (Path) එක මේ විදිහට වෙනස් කරන්න:
+                  <Route path="/my-projects" element={user ? <ViewItems /> : <Login />} />
                   <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 text-white px-4 py-1.5 rounded-lg font-bold transition shadow-sm">
                     Logout
                   </button>
@@ -54,7 +58,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
           </Routes>
         </main>
-        
+
       </div>
     </Router>
   );
