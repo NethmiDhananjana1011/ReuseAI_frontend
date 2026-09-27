@@ -7,7 +7,9 @@ export default function ViewItems() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/items');
+        const user = JSON.parse(localStorage.getItem('user'));
+        // User ගේ ID එක URL එකේ අගට එකතු කරලා යවනවා
+        const res = await axios.get(`http://localhost:5000/api/items?userId=${user.id}`);
         setItems(res.data);
       } catch (err) {
         console.error("Error fetching items:", err);
