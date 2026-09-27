@@ -10,10 +10,17 @@ export default function AddItem() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/items', formData);
+      const user = JSON.parse(localStorage.getItem('user')); // ලොග් වෙලා ඉන්න User ව ගන්නවා
+      
+      // formData එකයි, user.id එකයි එකතු කරලා අලුත් Object එකක් හදනවා
+      const itemData = {
+        ...formData,
+        userId: user.id
+      };
+
+      const res = await axios.post('http://localhost:5000/api/items', itemData);
       setRecommendations(res.data.recommendations);
       setFormData({ name: '', material: '', condition: '', description: '' });
-      // React Router පාවිච්චි කරන නිසා page එක ඉබේ refresh වෙන්න ඕන නැහැ, අලුත් Item එක saved items පිටුවට ගිහින් බලන්න පුළුවන්.
     } catch (err) {
       console.error(err);
       alert("Error adding item");
