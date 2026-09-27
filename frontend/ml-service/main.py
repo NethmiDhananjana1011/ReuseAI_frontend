@@ -39,9 +39,21 @@ def recommend_reuse(item: Item):
     
     results = []
     for index, score in top_3:
-        results.append({
-            "reuse_option": df.iloc[index]['reuse_option'],
-            "match_score": round(score * 100, 1) # 92.5% වගේ එන්න හදන්නේ
-        })
+        match_percentage = round(score * 100, 1)
+        
+        # ගැලපීමක් තියෙනවා නම් පමණක් results වලට දානවා
+        if match_percentage > 0:
+            results.append({
+                "reuse_option": df.iloc[index]['reuse_option'],
+                "match_score": match_percentage
+            })
+            
+    # Dataset එකේ කිසිම ගැලපීමක් නැත්නම් (0% match), සාමාන්‍ය අදහස් ටිකක් යවනවා
+    if len(results) == 0:
+        results = [
+            {"reuse_option": "Creative DIY Art Project", "match_score": 0},
+            {"reuse_option": "Upcycle into a decorative piece", "match_score": 0},
+            {"reuse_option": "Use as a small storage container or planter", "match_score": 0}
+        ]
         
     return {"recommendations": results}

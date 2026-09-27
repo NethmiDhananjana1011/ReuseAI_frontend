@@ -1,38 +1,115 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
-export default function Login() {
+const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:5000/api/auth/login', formData);
-      // Token එක සහ User විස්තර Save කරගන්නවා
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
-      window.location.href = '/'; // Login වුණාම Home page එකට යවනවා
+      window.location.href = '/'; 
     } catch (err) {
-      alert(err.response?.data?.message || "Login failed");
+      setError(err.response?.data?.message || 'Login failed');
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
-    <div className="max-w-md mx-auto mt-10 bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-      <h2 className="text-3xl font-bold mb-6 text-center text-green-700">Welcome Back!</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input type="email" name="email" placeholder="Email Address" onChange={handleChange} className="border p-3 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} className="border p-3 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required />
-        <button type="submit" className="bg-green-600 text-white font-bold text-lg py-3 rounded-lg hover:bg-green-700 transition">Log In</button>
-      </form>
-      <p className="mt-4 text-center text-gray-600">
-        Don't have an account? <Link to="/signup" className="text-green-600 font-bold hover:underline">Sign up</Link>
-      </p>
+    // පිටුපස ලා දුඹුරු/ක්‍රීම් පාට පසුබිම
+    <div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center p-6 font-sans">
+      
+      {/* ප්‍රධාන සුදු පාට කොටුව */}
+      <div className="flex bg-white rounded-[2rem] shadow-2xl overflow-hidden max-w-5xl w-full relative border border-gray-100">
+
+        {/* වම් පැත්ත: Login Form එක */}
+        <div className="w-full md:w-1/2 p-10 lg:p-16 flex flex-col justify-center relative z-10">
+          
+          {/* උඩ තියෙන Logo එක */}
+          <div className="flex items-center gap-2 mb-10">
+            <span className="text-xl font-bold text-[#14532d] flex items-center gap-2">
+              <span className="text-2xl">♻️</span> ReuseAI
+            </span>
+          </div>
+
+          {/* මාතෘකාව */}
+          <h2 className="text-4xl font-extrabold text-[#111827] mb-2 tracking-tight">Welcome Back!</h2>
+          <p className="text-gray-500 mb-10 font-medium">Please Log in to your account.</p>
+
+          {error && <div className="bg-red-50 text-red-600 p-3 rounded-lg mb-6 text-sm border border-red-100">{error}</div>}
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Email Input */}
+            <div>
+              <input
+                type="email"
+                required
+                placeholder="Email Address"
+                className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#14532d] focus:ring-1 focus:ring-[#14532d] transition-colors bg-white text-gray-800 placeholder-gray-400"
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
+              />
+            </div>
+            {/* Password Input */}
+            <div>
+              <input
+                type="password"
+                required
+                placeholder="Password"
+                className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#14532d] focus:ring-1 focus:ring-[#14532d] transition-colors bg-white text-gray-800 placeholder-gray-400"
+                onChange={(e) => setFormData({...formData, password: e.target.value})}
+              />
+            </div>
+
+            {/* Remember me & Forgot Password */}
+            <div className="flex items-center justify-between text-sm mt-4 mb-8">
+              <label className="flex items-center text-gray-500 cursor-pointer font-medium">
+                <input type="checkbox" className="mr-2 w-4 h-4 rounded border-gray-300 text-[#14532d] focus:ring-[#14532d]" />
+                Remember me
+              </label>
+              <a href="#" className="text-[#14532d] hover:underline font-medium">Forgot password?</a>
+            </div>
+
+            {/* Buttons දෙක */}
+            <div className="flex gap-4 mt-8">
+              <button type="submit" className="flex-1 bg-[#14532d] hover:bg-[#166534] text-white font-semibold py-4 rounded-xl transition-colors shadow-md">
+                Login
+              </button>
+              <Link to="/signup" className="flex-1 bg-white border-2 border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold py-4 rounded-xl transition-colors text-center inline-block">
+                Create account
+              </Link>
+            </div>
+          </form>
+
+          {/* පහළින් තියෙන පොඩි අකුරු ටික */}
+          <div className="mt-12 text-xs text-gray-400 font-medium">
+            By sign up, you agree to our terms and that you have read our data policy.
+          </div>
+        </div>
+
+        {/* දකුණු පැත්ත: පින්තූරය */}
+        <div className="hidden md:block w-1/2 relative bg-green-900">
+           {/* පින්තූර දෙක වෙන් වෙන තැන තියෙන කහ පාට Play Button එක */}
+           <div className="absolute left-0 top-1/2 -translate-y-1/2 -ml-6 w-12 h-12 bg-[#fbbf24] rounded-full flex items-center justify-center shadow-lg z-20 border-4 border-white cursor-pointer hover:scale-105 transition-transform">
+              <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 4l12 6-12 6z" />
+              </svg>
+           </div>
+
+          {/* කොළ පාට කුරුල්ලා/ස්වභාවික පින්තූරය */}
+          <img
+            src="https://images.unsplash.com/photo-1550853024-fae8cd4be47f?q=80&w=2089&auto=format&fit=crop"
+            alt="Nature Bird"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+      </div>
     </div>
   );
-}
+};
+
+export default Login;

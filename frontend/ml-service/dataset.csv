@@ -1,9 +1,119 @@
 name,material,condition,reuse_option
-Old wooden door,Wood,Good,Furniture Making
-Old wooden door,Wood,Fair,Room Partition
-Plastic bottle,Plastic,Good,Plant Pot
-Plastic bottle,Plastic,Fair,Storage Container
-Glass bottle,Glass,Good,Decoration
-Old chair,Wood,Poor,Firewood
-Old laptop,Electronics,Poor,Parts Recovery
-Old laptop,Electronics,Good,Home Server
+bottle,plastic,good,Cut in half and use as a self-watering planter
+bottle,plastic,crushed,Melt down carefully to form custom plastic guitar picks
+jug,plastic,old,Cut the top to create a scoop for pet food or garden soil
+container,plastic,cracked,Use as a drip tray under indoor potted plants
+bag,plastic,torn,Fuse multiple bags with an iron to make durable waterproof fabric
+cutlery,plastic,used,Wash and paint to create a decorative starburst wall mirror
+straws,plastic,used,Wash and weave into colorful small baskets
+cap,plastic,dirty,Clean and glue together to make a waterproof coaster
+bucket,plastic,broken handle,Drill holes in the bottom and use as a large compost bin
+pipe,plastic,scrap,Cut into small rings to organize cables and cords
+jar,glass,empty,Attach under a shelf with screws through the lid to store spices
+jar,glass,dirty,Clean and fill with fairy lights for a cozy table lamp
+bottle,glass,empty,Use a glass cutter to make custom drinking glasses
+bottle,glass,broken,Tumble the broken pieces to create DIY sea glass for mosaics
+window,glass,cracked,Frame the best section with wood to make a transparent dry-erase board
+mirror,glass,shattered,Use small pieces to decorate a picture frame or mosaic table
+bulb,glass,burnt out,Carefully hollow out and use as a tiny hanging terrarium
+cup,glass,chipped,Fill with wax and a wick to create a custom homemade candle
+t-shirt,cotton,torn,Cut into strips and braid into a strong dog chew toy
+jeans,denim,worn out,Cut the legs off to make a durable tool apron or tote bag
+sweater,wool,shrunk,Cut and sew into cozy winter mittens or a beanie
+socks,cotton,holes,Fill with rice and tie off to make a microwaveable heating pad
+towel,terrycloth,frayed,Cut into squares and hem the edges for reusable cleaning rags
+bedsheet,cotton,stained,Cut into yarn to crochet a large washable bath mat
+button up,cotton,missing buttons,Use the fabric to make patchwork quilt squares
+dress,polyester,old,Repurpose the fabric to make decorative throw pillow covers
+pallet,wood,broken,Dismantle and sand to build a rustic coffee table
+pallet,wood,good,Stand upright and secure to a wall for a vertical herb garden
+chair,wood,broken leg,Remove the legs and hang the backrest as a towel rack
+ladder,wood,old,Mount horizontally on the wall as a bookshelf
+scrap,wood,small,Sand and paint to make customized children's building blocks
+door,wood,scratched,Sand and refinish to use as a large vintage dining table top
+crate,wood,empty,Stack and screw together to create modular shelving
+drawer,wood,old,Add small legs and use as a vintage-style dog bed
+keyboard,plastic,broken,Remove the keys and glue magnets inside for fridge magnets
+monitor,plastic,dead,Hollow out the casing to make a unique pet bed or diorama
+cd,plastic,scratched,Cut into small geometric shapes to decorate a disco-ball style planter
+wire,copper,tangled,Strip the wire and use the copper for wire-wrapping jewelry
+circuit board,mixed,dead,Cut into rectangles and attach hooks to make geeky earrings
+floppy disk,plastic,obsolete,Glue four together to make a retro desktop pen holder
+mouse,plastic,broken,Remove the cord and paint to use as a quirky paperweight
+phone,mixed,dead,Remove the battery and frame the disassembled parts as wall art
+tire,rubber,worn out,Paint with bright colors and stack for a raised garden bed
+tire,rubber,old,Attach a sturdy rope and hang from a strong tree branch as a swing
+inner tube,rubber,punctured,Cut into wide bands to use as heavy-duty custom rubber bands
+boot,rubber,leaking,Fill with soil and use as a quirky outdoor plant pot
+can,metal,empty,Remove the label and punch holes to make a rustic lantern
+can,metal,rusty,Clean and paint to use as an industrial-style pencil holder
+spoons,metal,tarnished,Flatten and bend the handles to make decorative wall hooks
+baking sheet,metal,burnt,Clean and attach magnetic strips to use as a magnetic spice rack
+pipe,metal,scrap,Assemble with fittings to make an industrial steampunk lamp
+forks,metal,bent,Twist the tines to create an artistic table centerpiece
+kettle,metal,broken handle,Clean the inside and use as a vintage indoor watering can
+newspaper,paper,read,Soak in water and blend to make DIY recycled paper sheets
+magazine,paper,old,Roll pages tightly into tubes to create a woven paper basket
+cardboard,paper,boxes,Cut out shapes and layer them to make a cat scratching pad
+book,paper,damaged,Hollow out the center pages to create a secret storage safe
+canister,plastic,empty,Decorate the outside and use as a piggy bank
+shoebox,cardboard,empty,Cover with wrapping paper and use as a drawer organizer
+belt,leather,worn,Cut into strips to make custom drawer pulls or cabinet handles
+suitcase,leather,broken zipper,Attach wooden legs to turn it into a vintage side table
+mug,ceramic,cracked,Place at the bottom of a larger pot for soil drainage
+plate,ceramic,shattered,Use the broken pieces for colorful garden stepping stone mosaics
+pot,clay,broken,Place the shards in a garden to create mini toad houses
+tennis ball,rubber,dead,Cut a slit and attach to the end of a chair leg to protect floors
+skateboard,wood,snapped,Remove the wheels and mount to a wall as a floating shelf
+guitar,wood,broken neck,Remove the face and insert shelves to make a hanging display cabinet
+vinyl record,plastic,scratched,Heat gently in an oven and mold into a decorative bowl
+cork,wood,used,Glue multiple corks onto a backing to make a custom bulletin board
+hanger,wire,bent,Unwind and reshape to create a sturdy frame for a DIY wreath
+hanger,plastic,broken,Use the bottom rod as a large spool for organizing ribbons or yarn
+basket,wicker,unraveling,Paint and mount to a bathroom wall to store rolled towels
+blanket,fleece,holes,Cut into squares and tie the edges to make a seamless pet blanket
+curtain,fabric,faded,Sew into large reusable tote bags for grocery shopping
+laptop,mixed,dead,Salvage the screen to create a DIY external smart mirror
+watch,metal,broken,Remove the straps and use the face in a steampunk resin pendant
+belt,canvas,frayed,Wrap tightly around a cylindrical can to make a textured vase
+drum,wood,broken head,Add a circular glass top to use as an eclectic coffee table
+umbrella,fabric,broken,Remove the fabric from the frame to sew a waterproof tote bag
+key,metal,old,Bend into hooks and screw into a wooden board for a key rack
+suitcase,plastic,cracked,Line with plastic and use as a quirky indoor planter
+cereal box,cardboard,empty,Cut diagonally to create DIY desktop magazine holders
+mousepad,rubber,worn,Cut into small circles and glue under furniture legs to prevent scratching
+cd case,plastic,empty,Use as a mini greenhouse for germinating small seeds
+towel,cotton,stained,Cut into strips and braid into a thick dog chew toy
+lightbulb,glass,burnt out,Carefully hollow out and fill with water for a small propagation station
+cork,wood,used,Slice into discs and glue under plant pots as moisture protectors
+spatula,plastic,melted,Use in the garden to dig small holes for seeds
+yoga mat,foam,torn,Cut into knee pads for gardening or kneeling work
+floppy disk,plastic,obsolete,Drill holes and link with jump rings to make a retro notebook cover
+record,vinyl,scratched,Heat gently and mold over a bowl to create a wavy fruit bowl
+cassette tape,plastic,old,Take out the tape and use the casing as a retro gift card holder
+spoon,wood,cracked,Paint the top and stick into soil to use as a garden vegetable marker
+colander,metal,rusty,Line with moss and soil to create a hanging flower basket
+rake,metal,broken handle,Remove the handle and hang the metal head to store wine glasses
+ladder,wood,broken steps,Use as a rustic trellis for climbing plants in the garden
+pillowcase,cotton,torn,Sew the bottom shut and use as a reusable laundry bag
+glove,rubber,punctured,Cut off the fingers to use as strong heavy-duty rubber bands
+toothbrush,plastic,used,Boil to sterilize and use for detailed cleaning of grout or jewelry
+egg carton,cardboard,empty,Use the cups to start seedlings before transferring to the garden
+tin can,metal,empty,Punch holes in the sides and place a candle inside for a romantic lantern
+wine bottle,glass,empty,Fill with water and invert into soil for a slow-drip plant waterer
+hose,rubber,leaking,Cut into pieces and slit down the side to cover sharp edges of tools
+shutter,wood,old,Mount on the wall and use the slats to display mail or photos
+briefcase,leather,broken lock,Transform into a vintage-style portable tool box
+book,paper,damaged,Fold the pages intricately to create a 3D paper art sculpture
+wallet,leather,worn out,Cut the leather into small pieces to patch up other leather goods
+camera,mixed,broken,Hollow out the lens and use it as a desk pencil holder
+teacup,ceramic,chipped,Melt wax inside with a wick to make a vintage teacup candle
+saucer,ceramic,broken,Crush the pieces and use them at the bottom of a pot for drainage
+picture frame,wood,glass broken,Attach chicken wire to the back to make an earring holder display
+doorknob,metal,old,Screw into a piece of reclaimed wood to create a sturdy coat hook
+cutting board,wood,split,Sand it down and attach a clip to make a rustic clipboard
+muffin tin,metal,rusty,Use in a desk drawer to organize small items like paperclips and pins
+bucket,metal,leaking,Drill extra holes in the bottom and use as an outdoor planter
+soda can,metal,empty,Cut the aluminum to craft decorative metal flowers
+paper towel roll,cardboard,empty,Stuff with dryer lint to make excellent DIY fire starters
+calendar,paper,old,Frame the beautiful pictures to use as cheap wall art

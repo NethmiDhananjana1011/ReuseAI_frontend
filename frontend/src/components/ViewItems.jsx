@@ -30,51 +30,41 @@ export default function ViewItems() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-        <h2 className="text-3xl font-bold mb-8 text-gray-800 flex items-center gap-3">
-          📦 My Saved Items
-        </h2>
-        
-        {items.length === 0 ? (
-          <div className="text-center py-16 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-300">
-            <span className="text-5xl block mb-4">📭</span>
-            <p className="text-xl text-gray-600 font-medium">No items found.</p>
-            <p className="text-gray-500 mt-2">Go to "Add Item" to start adding unused items!</p>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-5">
-            {items.map((item) => (
-              <div key={item._id} className="bg-white border-2 border-gray-100 p-6 rounded-2xl hover:border-green-300 hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row justify-between sm:items-center gap-6">
-                
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3 capitalize">{item.name}</h3>
-                  <div className="flex flex-wrap gap-3 text-sm">
-                    <span className="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg border border-blue-200 font-medium">
-                      🛠️ {item.material}
-                    </span>
-                    <span className="bg-orange-50 text-orange-700 px-3 py-1.5 rounded-lg border border-orange-200 font-medium">
-                      ✨ {item.condition}
-                    </span>
-                  </div>
-                  {item.description && (
-                    <p className="text-gray-600 mt-4 bg-gray-50 p-3 rounded-xl text-sm italic border border-gray-100">
-                      "{item.description}"
-                    </p>
-                  )}
+    <div className="max-w-4xl mx-auto mt-10">
+      <h2 className="text-3xl font-bold mb-6 text-green-700">My Projects 🛠️</h2>
+      {items.length === 0 ? (
+        <p className="text-gray-500">You haven't saved any projects yet.</p>
+      ) : (
+        <div className="grid gap-6 md:grid-cols-2">
+          {items.map((item) => (
+            <div key={item._id} className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-800 capitalize mb-2">{item.name}</h3>
+              <p className="text-gray-600"><strong>Material:</strong> {item.material}</p>
+              <p className="text-gray-600"><strong>Condition:</strong> {item.condition}</p>
+              {item.description && <p className="text-gray-600 mt-2"><strong>Notes:</strong> {item.description}</p>}
+              
+              {/* AI Recommendations පෙන්වන අලුත් කොටස */}
+              {item.recommendations && item.recommendations.length > 0 && (
+                <div className="mt-4 bg-green-50 p-4 rounded-xl border border-green-200">
+                  <h4 className="font-bold text-green-800 mb-2">💡 AI Ideas to Try:</h4>
+                  <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                    {item.recommendations.map((rec, index) => (
+                      <li key={index}>{rec}</li>
+                    ))}
+                  </ul>
                 </div>
+              )}
 
-                <button 
-                  onClick={() => handleDelete(item._id)}
-                  className="bg-white text-red-500 border-2 border-red-100 hover:bg-red-500 hover:text-white hover:border-red-500 font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2 shadow-sm"
-                >
-                  Delete 🗑️
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+              <button 
+                onClick={() => handleDelete(item._id)} 
+                className="mt-4 bg-red-100 text-red-600 font-semibold px-4 py-2 rounded-lg hover:bg-red-200 transition"
+              >
+                Delete Project
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
