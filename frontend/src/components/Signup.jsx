@@ -20,22 +20,21 @@ const Signup = () => {
 
   return (
     <div className="h-screen bg-[#FDFBF7] flex items-center justify-center p-4 sm:p-6 font-sans overflow-hidden">
-      
+
       <div className="flex bg-white rounded-[2rem] shadow-2xl overflow-hidden max-w-5xl w-full md:h-[600px] relative border border-gray-100">
 
         {/* වම් පැත්ත: පින්තූරය (Login එකේ දකුණේ තිබුණ එක මෙතන වමට දැම්මා) */}
         <div className="hidden md:block w-1/2 relative bg-green-900 h-full">
-           
-           {/* කහ පාට Play Button එක දැන් දකුණු මායිමේ */}
-           <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-12 h-12 bg-[#fbbf24] rounded-full flex items-center justify-center shadow-lg z-20 border-4 border-white cursor-pointer hover:scale-105 transition-transform">
-              <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M4 4l12 6-12 6z" />
-              </svg>
-           </div>
 
-          {/* අන්තර්ජාලයේ පින්තූරයක් (ඔයාගේම එකක් දානවා නම් src={signupBg} ලෙස දෙන්න) */}
+          {/* කහ පාට Play Button එක දැන් දකුණු මායිමේ */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-12 h-12 bg-[#fbbf24] rounded-full flex items-center justify-center shadow-lg z-20 border-4 border-white cursor-pointer hover:scale-105 transition-transform">
+            <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 4l12 6-12 6z" />
+            </svg>
+          </div>
+
           <img
-            src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?q=80&w=2070&auto=format&fit=crop"
+            src={signupBg}
             alt="ReuseAI Signup Background"
             className="w-full h-full object-cover"
           />
@@ -43,7 +42,7 @@ const Signup = () => {
 
         {/* දකුණු පැත්ත: Signup Form එක */}
         <div className="w-full md:w-1/2 p-8 lg:p-12 flex flex-col justify-center relative z-10">
-          
+
           <div className="flex items-center gap-2 mb-6">
             <span className="text-xl font-bold text-[#14532d] flex items-center gap-2">
               <span className="text-2xl">♻️</span> ReuseAI
@@ -62,7 +61,7 @@ const Signup = () => {
                 required
                 placeholder="Full Name"
                 className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#14532d] focus:ring-1 focus:ring-[#14532d] transition-colors bg-white text-gray-800 placeholder-gray-400"
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
             </div>
             <div>
@@ -71,7 +70,7 @@ const Signup = () => {
                 required
                 placeholder="Email Address"
                 className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#14532d] focus:ring-1 focus:ring-[#14532d] transition-colors bg-white text-gray-800 placeholder-gray-400"
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
             </div>
             <div>
@@ -80,7 +79,7 @@ const Signup = () => {
                 required
                 placeholder="Password"
                 className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#14532d] focus:ring-1 focus:ring-[#14532d] transition-colors bg-white text-gray-800 placeholder-gray-400"
-                onChange={(e) => setFormData({...formData, password: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
               />
             </div>
 
