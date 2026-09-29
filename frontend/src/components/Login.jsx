@@ -99,12 +99,7 @@ const Login = () => {
               </svg>
            </div>
 
-          {/* කොළ පාට කුරුල්ලා/ස්වභාවික පින්තූරය */}
-          <img
-            src="https://images.unsplash.com/photo-1550853024-fae8cd4be47f?q=80&w=2089&auto=format&fit=crop"
-            alt="Nature Bird"
-            className="w-full h-full object-cover"
-          />
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1550853024-fae8cd4be47f?q=80&w=2089&auto=format&fit=crop')" }}
         </div>
 
       </div>
